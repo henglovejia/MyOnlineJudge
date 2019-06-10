@@ -1,5 +1,6 @@
 package cn.edu.ecnu.heng.leetcode;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Solution {
 	public int[] twoSum(int[] nums, int target) {
@@ -236,11 +239,87 @@ public class Solution {
 		return start + 1;
 	}
 
+	public Boolean isChinese(String str) {
+		String regEx = "[\u4e00-\u9fa5]";
+		int count = 0;
+		Pattern pat = Pattern.compile(regEx);
+		Matcher matcher = pat.matcher(str);
+		while (matcher.find()) {
+			for (int i = 0; i <= matcher.groupCount(); i++) {
+				count = count + 1;
+			}
+		}
+		return count == str.length();
+	}
+
+	public int removeElement(int[] nums, int val) {
+		int start = 0, end = 0;
+		for (; end < nums.length; end++) {
+			if (nums[end] != val) {
+				nums[start++] = nums[end];
+			}
+		}
+		return start;
+	}
+
+	public int strStr(String haystack, String needle) {
+		if (needle == null) {
+			return 0;
+		}
+		return haystack.indexOf(needle);
+	}
+
+	public int divide(int dividend, int divisor) {
+		long tmp = dividend / divisor;
+		return (int) ((tmp > Integer.MAX_VALUE || tmp < Integer.MIN_VALUE) ? Integer.MAX_VALUE : tmp);
+	}
+
+	public int fixNum(int n) {
+		int tmp = n * n;
+		int num = 0;
+		for (int i = 1; i <= n; i++) {
+			if (tmp % i == 0) {
+				num++;
+			}
+		}
+		return num;
+	}
+
+	public int findN(int find) {
+		for (int i = 1;; i++) {
+			int tmp = fixNum(i);
+			if (tmp == find) {
+				return i;
+			}
+			if (tmp > find) {
+				return -1;
+			}
+		}
+	}
+
+	public int countDllFile(String filePath) {
+		int count = 0;
+		File file = new File(filePath);
+		if (file.exists()) {
+			File[] listFiles = file.listFiles();
+			if (listFiles != null) {
+				for (File file2 : listFiles) {
+					if (file2.isDirectory()) {
+						count += countDllFile(file2.getAbsolutePath());
+					} else if (file2.getAbsolutePath().endsWith(".dll")) {
+						System.out.println(file2.getAbsolutePath());
+						++count;
+					}
+				}
+			}
+		}
+		return count;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Solution solution = new Solution();
-//		ListNode head = solution.new ListNode(0);
-		System.out.println(solution.removeDuplicates(new int[] {1,1,2}));
+		System.out.println(solution.countDllFile("C:\\"));
 	}
 
 }
