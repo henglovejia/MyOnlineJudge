@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Main3 {
 
-	public static class NestedData implements Comparable<NestedData> {
+	public static class Node implements Comparable<Node> {
 
-		public NestedData() {
+		public Node() {
 			
 		}
 
 		@Override
-		public int compareTo(NestedData data) {
+		public int compareTo(Node data) {
 			return 0;
 		}
 
