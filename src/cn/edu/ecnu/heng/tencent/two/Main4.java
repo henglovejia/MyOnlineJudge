@@ -8,7 +8,7 @@ public class Main4 {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
 		int[][] map = new int[n][3];
-		int x = 0, y = -1;
+		int y = -1;
 		int cost = 0;
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < 3; j++) {

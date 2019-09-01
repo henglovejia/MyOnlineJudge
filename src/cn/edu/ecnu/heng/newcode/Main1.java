@@ -2,9 +2,6 @@ package cn.edu.ecnu.heng.newcode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Scanner;
-
-import com.sun.org.apache.regexp.internal.recompile;
 
 public class Main1 {
 
@@ -161,14 +158,13 @@ public class Main1 {
 	}
 
 	public static void main(String[] args) {
-		Main1 main = new Main1();
 		int[][] matrix = new int[5][1];
 		matrix[0][0]=1;
 		matrix[1][0]=2;
 		matrix[2][0]=3;
 		matrix[3][0]=4;
 		matrix[4][0]=5;
-		System.out.println(main.printMatrix(matrix));
+		System.out.println(printMatrix(matrix));
 	}
 
 }

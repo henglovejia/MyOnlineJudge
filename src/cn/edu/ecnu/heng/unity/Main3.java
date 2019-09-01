@@ -1,23 +1,8 @@
-package cn.edu.ecnu.heng.template;
+package cn.edu.ecnu.heng.unity;
 
 import java.util.Scanner;
 
 public class Main3 {
-
-	public static class Node<T> implements Comparable<Node<T>> {
-		public T data;
-
-		public Node(T data) {
-			this.data = data;
-		}
-
-		@Override
-		public int compareTo(Node<T> node) {
-			// this.data - node.data >= 0 则升序
-			return 0;
-		}
-
-	}
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -27,6 +12,15 @@ public class Main3 {
 			list[i] = scanner.nextInt();
 		}
 		scanner.close();
+		for(int i=0;i<n;i++) {
+			int y = 0;
+			for(int j=i+1;j<n;j++) {
+				if(list[i] > list[j]) {
+					y++;
+				}
+			}
+			System.out.print(y + " ");
+		}
 	}
 
 }
