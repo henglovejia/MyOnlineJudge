@@ -1,32 +1,25 @@
 package cn.edu.ecnu.heng.pinduoduo.two;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main3 {
 
-	public static class Node<T> implements Comparable<Node<T>> {
-		public T data;
-
-		public Node(T data) {
-			this.data = data;
-		}
-
-		@Override
-		public int compareTo(Node<T> node) {
-			// this.data - node.data >= 0 则升序
-			return 0;
-		}
-
-	}
-	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
-		int[] list = new int[n];
-		for (int i = 0; i < n; i++) {
-			list[i] = scanner.nextInt();
-		}
+		int m = scanner.nextInt();
+		int k = scanner.nextInt();
 		scanner.close();
+		int[] list = new int[n * m];
+		int index = 0;
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= m; j++) {
+				list[index++] = i * j;
+			}
+		}
+		Arrays.sort(list);
+		System.out.println(list[n * m - k]);
 	}
 
 }

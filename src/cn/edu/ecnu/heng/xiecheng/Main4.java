@@ -1,9 +1,9 @@
-package cn.edu.ecnu.heng.template;
+package cn.edu.ecnu.heng.xiecheng;
 
 import java.util.Scanner;
 
-public class Main3 {
-
+public class Main4 {
+	
 	public static class Node implements Comparable<Node> {
 		public Object data;
 
@@ -18,7 +18,7 @@ public class Main3 {
 		}
 
 	}
-	
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();

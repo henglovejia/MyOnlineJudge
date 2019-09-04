@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class Main1 {
 
-	public static class Node<T> implements Comparable<Node<T>> {
-		public T data;
+	public static class Node implements Comparable<Node> {
+		public Object data;
 
-		public Node(T data) {
+		public Node(Object data) {
 			this.data = data;
 		}
 
 		@Override
-		public int compareTo(Node<T> node) {
+		public int compareTo(Node node) {
 			// this.data - node.data >= 0 则升序
 			return 0;
 		}

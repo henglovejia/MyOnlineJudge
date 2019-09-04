@@ -1,4 +1,4 @@
-package cn.edu.ecnu.heng.template;
+package cn.edu.ecnu.heng.tencent.three;
 
 import java.util.Scanner;
 
