@@ -1,23 +1,8 @@
 package cn.edu.ecnu.heng.xiecheng;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main1 {
-
-	public static class Node implements Comparable<Node> {
-		public Object data;
-
-		public Node(Object data) {
-			this.data = data;
-		}
-
-		@Override
-		public int compareTo(Node node) {
-			// this.data - node.data >= 0 则升序
-			return 0;
-		}
-
-	}
 
 	static int longestSubStrLength(String s1, String s2) {
 		s1 = s1.toLowerCase();
